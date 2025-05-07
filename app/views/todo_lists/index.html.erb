@@ -7,7 +7,10 @@
     <li>
       <%= link_to todo_list.title, todo_list %> |
       <%= link_to 'Editar', edit_todo_list_path(todo_list) %> |
-      <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Destroy', todo_list, data: { 
+        turbo_method: :delete, 
+        turbo_confirm: 'Are you sure?' 
+      } %>
     </li>
   <% end %>
 </ul>

@@ -34,15 +34,17 @@ class TodoListsController < ApplicationController
     end
 
     def destroy
+        @todo_list = TodoList.find(params[:id])
         @todo_list.destroy
-        redirect_to todo_lists_url, notice: 'Todo list was successfully destroyed.'
+        redirect_to root_path, notice: 'Todo list was successfully destroyed.'
     end
+      
 
     private
     def set_todo_list
         @todo_list = TodoList.find(params[:id])
     end
-    
+
     def todo_list_params
         params.require(:todo_list).permit(:title, :description)
     end
