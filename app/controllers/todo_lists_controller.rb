@@ -46,7 +46,7 @@ class TodoListsController < ApplicationController
     end
 
     def todo_list_params
-        params.require(:todo_list).permit(:title, :description)
+        params.require(:todo_list).permit(:title)
     end
 
 

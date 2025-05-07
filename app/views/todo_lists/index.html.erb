@@ -1,16 +1,29 @@
+
+
+<div class="container">
+
 <h1>Listas de Tarefas</h1>
 
-<%= link_to 'Nova Lista', new_todo_list_path %>
 
 <ul>
   <% @todo_lists.each do |todo_list| %>
     <li>
-      <%= link_to todo_list.title, todo_list %> |
-      <%= link_to 'Editar', edit_todo_list_path(todo_list) %> |
-      <%= link_to 'Destroy', todo_list, data: { 
-        turbo_method: :delete, 
-        turbo_confirm: 'Are you sure?' 
-      } %>
+      <span class="todo-title"><%= link_to todo_list.title, todo_list %></span>
+      <span class="todo-actions">
+        <%= link_to 'Apagar', todo_list, class: 'rightli', data: { 
+          turbo_method: :delete, 
+          turbo_confirm: 'Tem certeza?' 
+        } %>
+        <%= link_to 'Editar', edit_todo_list_path(todo_list), class: 'rightli edit' %> 
+      </span>
     </li>
   <% end %>
 </ul>
+
+<div style="text-align: right; margin-top: 30px;">
+  <%= link_to 'Nova Lista', new_todo_list_path, class: 'btn btn-criar' %>
+</div>
+
+
+
+<div>

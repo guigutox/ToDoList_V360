@@ -1,15 +1,80 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e2e2e2;
+    padding: 2rem;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+li {
+    background: rgb(252, 252, 252);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    margin-right: 10px;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a[data-turbo-method="delete"] {
+    color: #dc3545;
+}
+
+.container {
+    height: 700px;
+    max-width: 800px;
+    margin: 35px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 13px;
+    border: 3px solid #c6aa9c;
+    box-shadow: 10px 15px 5px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+a.btn-criar {
+    background-color: #28a745;
+}
+
+a.btn-criar:hover {
+    background-color: #218838;
+}
+
+a.btn-criar:active {
+    background-color: #218838;
+}
+
+.rightli {
+    float: right;
+    margin-left: 10px;
+}
+
+.edit {
+    color: #007BFF;
+}
