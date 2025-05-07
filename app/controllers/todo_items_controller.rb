@@ -34,6 +34,13 @@ class TodoItemsController < ApplicationController
         redirect_to @todo_list, notice: 'Todo item was successfully destroyed.'
     end
 
+    def toggle_done
+        @todo_item = @todo_list.todo_items.find(params[:id])
+        @todo_item.update(done: !@todo_item.done)
+        redirect_to @todo_list, notice: "Estado da tarefa atualizado com sucesso."
+    end
+      
+
     def set_todo_list
         @todo_list = TodoList.find(params[:todo_list_id])
       end
