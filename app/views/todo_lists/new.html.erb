@@ -1,0 +1,25 @@
+<h1>Criar Nova Lista</h1>
+
+<%= form_with model: @todo_list, local: true do |form| %>
+  <% if @todo_list.errors.any? %>
+    <div>
+      <h2><%= pluralize(@todo_list.errors.count, "erro") %> proibiu esta lista de ser salva:</h2>
+      <ul>
+        <% @todo_list.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.submit "Criar Lista" %>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', todo_lists_path %>

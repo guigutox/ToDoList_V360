@@ -1,0 +1,7 @@
+<h1><%= @todo_list.title %></h1>
+
+<%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Voltar', todo_lists_path %>
+
+<h2>Itens</h2>
+<%= link_to 'Novo Item', new_todo_list_todo_item_path(@todo_list) %>
