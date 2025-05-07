@@ -1,15 +1,26 @@
-<% @todo_list.todo_items.each do |item| %>
+<h2>Itens</h2>
+
+<%= link_to 'Novo Item', new_todo_list_todo_item_path(@todo_list) %> |
+
+
+<ul>
+  <% @todo_list.todo_items.each do |item| %>
     <li>
       <%= item.content %>
       <% if item.done %>
         <strong>(Feito)</strong>
       <% else %>
-        <em>(Pendente)</em>
+        <strong>(Não Feito)</strong>
       <% end %>
       |
-      <%= link_to (item.done ? 'Marcar como não feito' : 'Marcar como feito'), toggle_done_todo_list_todo_item_path(@todo_list, item),data: { turbo_method: :patch } %>
+      <%= link_to (item.done ? 'Marcar como não feito' : 'Marcar como feito'),
+                  toggle_done_todo_list_todo_item_path(@todo_list, item),
+                  data: { turbo_method: :patch } %> |
       <%= link_to 'Editar', edit_todo_list_todo_item_path(@todo_list, item) %> |
-      <%= link_to 'Excluir', todo_list_todo_item_path(@todo_list, item), data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
+      <%= link_to 'Excluir', todo_list_todo_item_path(@todo_list, item),
+                  data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
     </li>
   <% end %>
-  
+</ul>
+
+<%= link_to 'Voltar para Listas', todo_lists_path %>
