@@ -1,7 +1,20 @@
-<h1><%= @todo_list.title %></h1>
-
-<%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Voltar', todo_lists_path %>
-
 <h2>Itens</h2>
+
 <%= link_to 'Novo Item', new_todo_list_todo_item_path(@todo_list) %>
+
+<ul>
+  <% @todo_list.todo_items.each do |item| %>
+    <li>
+      <%= item.content %> 
+      <% if item.done %>
+        <strong>(Feito)</strong>
+      <% end %>
+      |
+      <%= link_to 'Editar', edit_todo_list_todo_item_path(@todo_list, item) %> |
+      <%= link_to 'Excluir', todo_list_todo_item_path(@todo_list, item), 
+            data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
+    </li>
+  <% end %>
+  
+  <%= link_to 'Voltar para a Lista de Tarefas', todo_lists_path %>
+</ul>
