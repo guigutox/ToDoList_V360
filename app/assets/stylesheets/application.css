@@ -59,15 +59,15 @@ a.btn {
 
 
 a.btn-criar {
-    background-color: #28a745;
+    background-color: #6ab1bb;
 }
 
 a.btn-criar:hover {
-    background-color: #218838;
+    background-color: #538991;
 }
 
 a.btn-criar:active {
-    background-color: #218838;
+    background-color: #426d74;
 }
 
 .rightli {
@@ -77,4 +77,71 @@ a.btn-criar:active {
 
 .edit {
     color: #007BFF;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #c6aa9c;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.container form input[type="text"],
+.container form input[type="email"],
+.container form input[type="password"],
+.container form textarea,
+.container form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container form input[type="submit"],
+.container form button {
+    padding: 10px 20px;
+    background-color: #6ab1bb;
+    /* Cor do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    float: right;
+}
+
+.container form input[type="submit"]:hover,
+.container form button:hover {
+    background-color: #538991;
+}
+
+.container form input[type="submit"]:active,
+.container form button:active {
+    background-color: #004494;
+}
+
+.voltarForm {
+    background-color: #ed8679;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    float: none;
+}
+
+.voltarForm:hover {
+    background-color: #c47065;
+    text-decoration: none;
 }
