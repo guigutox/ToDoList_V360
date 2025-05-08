@@ -8,7 +8,7 @@
         <h3><%= pluralize(@todo_item.errors.count, "erro") %> ao salvar:</h2> 
         <ul>
           <% @todo_item.errors.full_messages.each do |message| %>
-            <li style="background-color: red; color:white"><%= message %></li>
+            <li class="liError"><%= message %></li>
           <% end %>
         </ul>
       </div>

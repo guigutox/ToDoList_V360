@@ -24,9 +24,9 @@
           <%= link_to (item.done ? 'Desfazer' : 'Concluir'),
                       toggle_done_todo_list_todo_item_path(@todo_list, item),
                       data: { turbo_method: :patch }, class: 'rightli' %> 
-          <%= link_to 'Excluir', todo_list_todo_item_path(@todo_list, item), class: 'rightli',
+          <%= link_to '🗑️ ', todo_list_todo_item_path(@todo_list, item), class: 'rightli',
             data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
-          <%= link_to 'Editar', edit_todo_list_todo_item_path(@todo_list, item), class: 'rightli edit' %> 
+          <%= link_to '✏️', edit_todo_list_todo_item_path(@todo_list, item), class: 'rightli edit' %> 
         </li>
       <% end %>
     </ul>
