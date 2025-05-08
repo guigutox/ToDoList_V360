@@ -4,10 +4,10 @@
   <%= form_with model: @todo_list, local: true do |form| %>
     <% if @todo_list.errors.any? %>
       <div>
-        <h2><%= pluralize(@todo_list.errors.count, "erro") %> proibiu esta lista de ser salva:</h2>
+        <h3><%= pluralize(@todo_list.errors.count, "erro") %> ao salvar:</h3>
         <ul>
           <% @todo_list.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+            <li class="liError"><%= message %></li>
           <% end %>
         </ul>
       </div>

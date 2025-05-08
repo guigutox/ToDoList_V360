@@ -5,12 +5,18 @@
     <ul style="margin-top: 5px;">
       <% @todo_list.todo_items.each do |item| %>
         <li>
-        <% if item.done %>
+
+        <%= link_to (item.done ? '(✔️)' : '(❌)'),
+                      toggle_done_todo_list_todo_item_path(@todo_list, item),
+                      data: { turbo_method: :patch }, class: 'leftli' %> 
+          <%= item.content %> 
+
+
+        <!-- <% if item.done %>
           <strong>(✔️)</strong>
         <% else %>
           <strong>(❌)</strong>
-        <% end %>
-          <%= item.content %>
+        <% end %>-->
 
         <!--
           <div class="checkbox">
@@ -19,9 +25,7 @@
           <%= item.content %>         
         -->
            
-          <%= link_to (item.done ? 'Desfazer' : 'Concluir'),
-                      toggle_done_todo_list_todo_item_path(@todo_list, item),
-                      data: { turbo_method: :patch }, class: 'rightli' %> 
+          
           <%= link_to '🗑️', todo_list_todo_item_path(@todo_list, item), class: 'rightli delete',
             data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
           <%= link_to '✏️', edit_todo_list_todo_item_path(@todo_list, item), class: 'rightli edit' %> 

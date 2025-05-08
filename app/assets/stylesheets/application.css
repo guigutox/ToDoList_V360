@@ -75,6 +75,11 @@ a.btn-criar:active {
     margin-left: 10px;
 }
 
+.leftli {
+    float: left;
+    margin-right: 10px;
+}
+
 .edit {
     color: #007BFF;
 }
