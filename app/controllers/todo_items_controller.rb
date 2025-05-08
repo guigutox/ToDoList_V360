@@ -50,7 +50,8 @@ class TodoItemsController < ApplicationController
     end
     
     def todo_item_params
-        params.require(:todo_item).permit(:content, :done)
+        params.require(:todo_item).permit(:content, :done, :priority)
     end
+      
 
 end

@@ -182,3 +182,19 @@ a.btn-criar:active {
 .divVoltar {
     margin-top: 20px;
 }
+
+.prioridade-alta {
+    background-color: #ffcccc;
+}
+
+.prioridade-media {
+    background-color: #fff2cc;
+}
+
+.prioridade-baixa {
+    background-color: #d9ead3;
+}
+
+.prioridade-indefinida {
+    background-color: #eeeeee;
+}

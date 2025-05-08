@@ -3,29 +3,26 @@
 
   <div class="containerShow">
     <ul style="margin-top: 5px;">
-      <% @todo_list.todo_items.each do |item| %>
-        <li>
+      <% @todo_items.each do |item| %>
+        <li class="<%= css_class_for_priority(item.priority) %>">
+
 
         <%= link_to (item.done ? '(✔️)' : '(❌)'),
                       toggle_done_todo_list_todo_item_path(@todo_list, item),
                       data: { turbo_method: :patch }, class: 'leftli' %> 
           <%= item.content %> 
-
-
         <!-- <% if item.done %>
           <strong>(✔️)</strong>
         <% else %>
           <strong>(❌)</strong>
         <% end %>-->
-
+        
         <!--
           <div class="checkbox">
           <%= check_box_tag "item[#{item.id}]", item.done, item.done, 
             data: { turbo_method: :patch, url: toggle_done_todo_list_todo_item_path(@todo_list, item) } %>
           <%= item.content %>         
         -->
-           
-          
           <%= link_to '🗑️', todo_list_todo_item_path(@todo_list, item), class: 'rightli delete',
             data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
           <%= link_to '✏️', edit_todo_list_todo_item_path(@todo_list, item), class: 'rightli edit' %> 

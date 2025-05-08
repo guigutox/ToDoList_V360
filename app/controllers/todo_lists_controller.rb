@@ -6,7 +6,18 @@ class TodoListsController < ApplicationController
     end
 
     def show
+        @todo_list = TodoList.find(params[:id])
+    
+        @todo_items = @todo_list.todo_items.sort_by do |item|
+          case item.priority
+          when 'alta' then 0
+          when 'media' then 1
+          when 'baixa' then 2
+          else 3
+          end
+        end
     end
+
 
     def new
         @todo_list = TodoList.new
