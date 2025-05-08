@@ -237,3 +237,9 @@ a.btn-criar:active {
     transform: translateY(-3px);
     color: #007bff;
 }
+
+.description {
+    border: 2px dashed #c6aa9c;
+    border-radius: 13px;
+    padding: 10px;
+}

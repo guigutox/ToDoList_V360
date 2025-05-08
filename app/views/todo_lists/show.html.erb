@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @todo_list.title %></h1>
-
+ <p class="description"><strong>Descrição:</strong> <%= @todo_list.description %></p>
   <div class="containerShow">
     <ul style="margin-top: 5px;">
       <% @todo_items.each do |item| %>
