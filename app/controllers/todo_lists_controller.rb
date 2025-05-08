@@ -2,7 +2,7 @@ class TodoListsController < ApplicationController
     before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
     def index
-        @todo_lists = TodoList.all
+        @todo_lists = TodoList.order(created_at: :desc) 
     end
 
     def show
@@ -38,11 +38,12 @@ class TodoListsController < ApplicationController
 
     def update
         if @todo_list.update(todo_list_params)
-            redirect_to @todo_list, notice: 'Todo list was successfully updated.'
+          redirect_to todo_lists_path, notice: 'Todo list foi atualizada com sucesso.'
         else
-            render :edit, status: :unprocessable_entity
+          render :edit, status: :unprocessable_entity
         end
     end
+      
 
     def destroy
         @todo_list = TodoList.find(params[:id])
