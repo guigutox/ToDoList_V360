@@ -9,7 +9,7 @@
     <li>
       <span class="todo-title"><%= link_to todo_list.title, todo_list %></span>
       <span class="todo-actions">
-        <%= link_to 'Apagar', todo_list, class: 'rightli', data: { 
+        <%= link_to 'Apagar', todo_list, class: 'rightli delete', data: { 
           turbo_method: :delete, 
           turbo_confirm: 'Tem certeza?' 
         } %>
