@@ -1,26 +1,42 @@
-<h2>Itens</h2>
+<div class="container">
+  <h1><%= @todo_list.title %></h1>
 
-<%= link_to 'Novo Item', new_todo_list_todo_item_path(@todo_list) %> |
 
 
-<ul>
-  <% @todo_list.todo_items.each do |item| %>
-    <li>
-      <%= item.content %>
-      <% if item.done %>
-        <strong>(Feito)</strong>
-      <% else %>
-        <strong>(Não Feito)</strong>
+  <div class="containerShow">
+    <ul style="margin-top: 5px;">
+      <% @todo_list.todo_items.each do |item| %>
+        <li>
+        <% if item.done %>
+          <strong>(✔️)</strong>
+        <% else %>
+          <strong>(❌)</strong>
+        <% end %>
+          <%= item.content %>
+
+        <!--
+          <div class="checkbox">
+          <%= check_box_tag "item[#{item.id}]", item.done, item.done, 
+            data: { turbo_method: :patch, url: toggle_done_todo_list_todo_item_path(@todo_list, item) } %>
+          <%= item.content %>         
+        -->
+           
+          <%= link_to (item.done ? 'Desfazer' : 'Concluir'),
+                      toggle_done_todo_list_todo_item_path(@todo_list, item),
+                      data: { turbo_method: :patch }, class: 'rightli' %> 
+          <%= link_to 'Excluir', todo_list_todo_item_path(@todo_list, item), class: 'rightli',
+            data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
+          <%= link_to 'Editar', edit_todo_list_todo_item_path(@todo_list, item), class: 'rightli edit' %> 
+        </li>
       <% end %>
-      |
-      <%= link_to (item.done ? 'Marcar como não feito' : 'Marcar como feito'),
-                  toggle_done_todo_list_todo_item_path(@todo_list, item),
-                  data: { turbo_method: :patch } %> |
-      <%= link_to 'Editar', edit_todo_list_todo_item_path(@todo_list, item) %> |
-      <%= link_to 'Excluir', todo_list_todo_item_path(@todo_list, item),
-                  data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
+      <div style="text-align: right; margin-top: 30px;">
+        <%= link_to 'Novo Item', new_todo_list_todo_item_path(@todo_list), class: 'btn btn-criar' %> 
+      </div>
+  </div>
 
-<%= link_to 'Voltar para Listas', todo_lists_path %>
+  <div style="margin-top: 20px;">
+      <%= link_to 'Voltar para Listas', todo_lists_path, class:'voltarForm' %>
+  </div>
+
+</div>

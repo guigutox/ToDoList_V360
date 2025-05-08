@@ -145,3 +145,17 @@ a.btn-criar:active {
     background-color: #c47065;
     text-decoration: none;
 }
+
+/* SHOW HTML TODO LIST*/
+
+.containerShow {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #c6aa9c;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
