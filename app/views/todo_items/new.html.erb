@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Adicionar Item à Lista: <%= @todo_list.title %></h1>
+  <h1>Adicionar Item</h1>
 
   <%= form_with model: [@todo_list, @todo_item], local: true do |form| %>
     <% if @todo_item.errors.any? %>
@@ -24,11 +24,11 @@
       <%= form.select :priority, TodoItem.priorities.keys.map { |k| [k.titleize, k] } %>
     </div>
 
-
+<!--
     <div>
       <%= form.label :done, "Concluído?" %>
       <%= form.check_box :done %>
-    </div>
+    </div> -->
 
     <div>
       <%= form.submit "Adicionar Item" %>

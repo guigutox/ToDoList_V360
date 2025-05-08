@@ -1,11 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e2e2e2;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #fef9f5;
     padding: 2rem;
 }
 
 h1 {
     color: #333;
+    text-align: center;
 }
 
 ul {
@@ -20,6 +21,7 @@ li {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    border: 2px solid #c6aa9c;
 }
 
 a {
@@ -29,11 +31,14 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a[data-turbo-method="delete"] {
     color: #dc3545;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-decoration: none;
 }
 
 .container {
@@ -81,17 +86,22 @@ a.btn-criar:active {
 }
 
 .edit {
-    color: #007BFF;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-decoration: none;
 }
 
+
 .edit:hover {
+    transform: translateY(-3px);
+    color: #007bff;
     text-decoration: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .delete:hover {
+    transform: translateY(-3px);
+    color: #007bff;
     text-decoration: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container form {
@@ -127,7 +137,6 @@ a.btn-criar:active {
 .container form button {
     padding: 10px 20px;
     background-color: #6ab1bb;
-    /* Cor do botão */
     color: white;
     border: none;
     border-radius: 5px;
@@ -197,4 +206,34 @@ a.btn-criar:active {
 
 .prioridade-indefinida {
     background-color: #eeeeee;
+}
+
+.divisoria {
+    border-bottom: 2px solid #ccc;
+    margin: 10px 0 20px 0;
+}
+
+.datas {
+    border: 2px solid #c6aa9c;
+    width: 35%;
+    border-radius: 13px;
+}
+
+.datas p {
+    margin: 0;
+    padding: 5px;
+}
+
+.checks:hover {
+    text-decoration: none;
+}
+
+.todo-title {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.todo-title:hover {
+    transform: translateY(-3px);
+    color: #007bff;
 }

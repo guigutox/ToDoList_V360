@@ -9,14 +9,14 @@
 
         <%= link_to (item.done ? '(✔️)' : '(❌)'),
                       toggle_done_todo_list_todo_item_path(@todo_list, item),
-                      data: { turbo_method: :patch }, class: 'leftli' %> 
+                      data: { turbo_method: :patch }, class: 'leftli checks' %> 
           <%= item.content %> 
         <!-- <% if item.done %>
           <strong>(✔️)</strong>
         <% else %>
           <strong>(❌)</strong>
         <% end %>-->
-        
+
         <!--
           <div class="checkbox">
           <%= check_box_tag "item[#{item.id}]", item.done, item.done, 

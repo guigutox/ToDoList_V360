@@ -1,6 +1,6 @@
 <div class="container"> 
 
-<h1>Editar Lista: <%= @todo_list.title %></h1>
+<h1>Edição de Lista</h1>
 
 <%= form_with model: @todo_list, local: true do |form| %>
   <% if @todo_list.errors.any? %>
@@ -23,9 +23,9 @@
     <%= form.submit "Atualizar Lista" %>
   </div>
 
-  <div>
-   <p> <strong>Data de Criação:</strong> <%= @todo_list.created_at.strftime("%d/%m/%Y %H:%M") %></p>
-   <p> <strong>Data de Atualização:</strong> <%= @todo_list.updated_at.strftime("%d/%m/%Y %H:%M") %></p>
+  <div class="datas">
+   <p> <strong>Criado em:</strong> <%= @todo_list.created_at.strftime("%d/%m/%Y") %></p>
+   <p> <strong>Atualizado em:</strong> <%= @todo_list.updated_at.strftime("%d/%m/%Y %H:%M") %></p>
   </div>
   
 <% end %>
