@@ -1,3 +1,5 @@
+<div class="container"> 
+
 <h1>Editar Lista: <%= @todo_list.title %></h1>
 
 <%= form_with model: @todo_list, local: true do |form| %>
@@ -13,7 +15,7 @@
   <% end %>
 
   <div>
-    <%= form.label :title %>
+    <%= form.label :Titulo %>
     <%= form.text_field :title %>
   </div>
 
@@ -22,4 +24,9 @@
   </div>
 <% end %>
 
-<%= link_to 'Voltar', @todo_list %>
+
+ <div class="divVoltar">
+    <%= link_to 'Voltar', todo_lists_path, class:'voltarForm' %>
+  </div>
+
+</div>

@@ -173,3 +173,7 @@ a.btn-criar:active {
     color: white;
     font-weight: bold;
 }
+
+.divVoltar {
+    margin-top: 20px;
+}
