@@ -22,7 +22,15 @@
   <div>
     <%= form.submit "Atualizar Lista" %>
   </div>
+
+  <div>
+   <p> <strong>Data de Criação:</strong> <%= @todo_list.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+   <p> <strong>Data de Atualização:</strong> <%= @todo_list.updated_at.strftime("%d/%m/%Y %H:%M") %></p>
+  </div>
+  
 <% end %>
+
+
 
 
  <div class="divVoltar">

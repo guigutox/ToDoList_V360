@@ -25,10 +25,19 @@
     </div>
 
     <div>
+      <p> <strong>Data de Criação:</strong> <%= @todo_item.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+      <p> <strong>Data de Atualização:</strong> <%= @todo_item.updated_at.strftime("%d/%m/%Y %H:%M") %></p>  
+    </div>
+
+    <div>
       <%= form.submit "Atualizar Item" %>
     </div>
+
+
   <% end %>
   
+
+
   <div class="divVoltar">
     <%= link_to 'Voltar', todo_list_path(@todo_list), class:"voltarForm" %>
   </div>

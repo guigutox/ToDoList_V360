@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
   resources :todo_lists do
     resources :todo_items, except: [:index, :show] do
       member do
