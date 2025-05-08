@@ -9,11 +9,11 @@
     <li>
       <span class="todo-title"><%= link_to todo_list.title, todo_list %></span>
       <span class="todo-actions">
-        <%= link_to 'Apagar', todo_list, class: 'rightli delete', data: { 
+        <%= link_to '🗑️', todo_list, class: 'rightli delete', data: { 
           turbo_method: :delete, 
           turbo_confirm: 'Tem certeza?' 
         } %>
-        <%= link_to 'Editar', edit_todo_list_path(todo_list), class: 'rightli edit' %> 
+        <%= link_to '✏️', edit_todo_list_path(todo_list), class: 'rightli edit' %> 
       </span>
     </li>
   <% end %>
