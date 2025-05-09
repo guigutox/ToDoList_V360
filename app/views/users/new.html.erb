@@ -1,34 +1,43 @@
-<h1>Registrar</h1>
+<div class="container">
 
-<%= form_with model: @user, url: signup_path do |form| %>
+  <div class="alignForm">
+  <h1>Registrar</h1>
 
-  <div>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <% if @user.errors.any? %>
+    <div style="color: red;">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="liError"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with model: @user, url: signup_path do |form| %>
+
+    <div>
+      <%= form.label :Insira_o_usuario %>
+      <%= form.text_field :username %>
+    </div>
+
+    <div>
+      <%= form.label :Senha%>
+      <%= form.password_field :password %>
+    </div>
+
+    <div>
+      <%= form.label :confirmar_senha %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+
+    <div>
+      <%= form.submit "Criar Conta", class:"zoom-btn" %>
+    </div>
+  <% end %>
+
+
   </div>
-
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="divVoltar">
+    <%= link_to 'Voltar', login_path, class: "voltarForm" %>
   </div>
-
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div>
-    <%= form.submit "Criar Conta" %>
-  </div>
-<% end %>
-
-<% if @user.errors.any? %>
-  <div style="color: red;">
-    <h3>Erros ao criar conta:</h3>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+</div>
