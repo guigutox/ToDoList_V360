@@ -254,3 +254,20 @@ a.btn-criar:active {
 .zoom-btn:hover {
     transform: scale(1.1);
 }
+
+.pError {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 13px;
+}
+
+.emphasis {
+    font-weight: bold;
+    color: #333;
+}
+
+.alignForm {
+    margin-top: 15%;
+}
