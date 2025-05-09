@@ -1,9 +1,16 @@
 class TodoListsController < ApplicationController
+    before_action :require_login
+    helper_method :current_user
     before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @todo_lists = TodoList.order(created_at: :desc) 
+    def current_user
+        @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
+
+    def index
+        @todo_lists = current_user&.todo_lists&.order(created_at: :desc) || []
+      end
+      
 
     def show
         @todo_list = TodoList.find(params[:id])
@@ -23,15 +30,15 @@ class TodoListsController < ApplicationController
         @todo_list = TodoList.new
     end
 
-    def create 
-        @todo_list = TodoList.new(todo_list_params)
-
+    def create
+        @todo_list = current_user.todo_lists.build(todo_list_params)
+      
         if @todo_list.save
-            redirect_to @todo_list, notice: 'Todo list was successfully created.'
+          redirect_to @todo_list, notice: 'Todo list criada com sucesso.'
         else
-            render :new, status: :unprocessable_entity
+          render :new, status: :unprocessable_entity
         end
-    end
+      end
 
     def edit
     end
@@ -54,8 +61,9 @@ class TodoListsController < ApplicationController
 
     private
     def set_todo_list
-        @todo_list = TodoList.find(params[:id])
+        @todo_list = current_user.todo_lists.find(params[:id])
     end
+      
 
     def todo_list_params
         params.require(:todo_list).permit(:title, :description)

@@ -1,4 +1,5 @@
 class TodoItemsController < ApplicationController
+    before_action :require_login
     before_action :set_todo_list
     before_action :set_todo_item, only: [:edit, :update, :destroy]
 

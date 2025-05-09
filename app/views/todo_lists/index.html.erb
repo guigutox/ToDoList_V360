@@ -3,6 +3,12 @@
 <h1>Listas de Tarefas</h1>
 <div class="divisoria"></div>
 
+<% if current_user %>
+  <p>Logado como: <strong><%= current_user.username %></strong></p>
+  <%= button_to "Logout", logout_path, method: :delete, data: { confirm: "Deseja realmente sair?" } %>
+<% end %>
+
+
 <ul>
   <% @todo_lists.each do |todo_list| %>
     <li>
