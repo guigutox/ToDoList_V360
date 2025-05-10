@@ -1,7 +1,4 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  title: MyString
-
-two:
-  title: MyString
+lista1:
+  title: "Estudar para a prova"
+  description: "Capítulo 5 e 6"
+  user: usuario1
