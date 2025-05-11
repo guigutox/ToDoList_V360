@@ -44,12 +44,12 @@ class TodoListsController < ApplicationController
     end
 
     def update
-        if @todo_list.update(todo_list_params)
-          redirect_to todo_lists_path, notice: 'Todo list foi atualizada com sucesso.'
-        else
+      if @todo_list.update(todo_list_params)
+          redirect_to @todo_list, notice: 'Todo list foi atualizada com sucesso.'
+      else
           render :edit, status: :unprocessable_entity
-        end
-    end
+      end
+  end
       
 
     def destroy
