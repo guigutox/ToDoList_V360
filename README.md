@@ -169,7 +169,7 @@ bin/rails test
 
 ## Demonstração
 ![Tela de Login](screenshots/login.png)
-![Tela de registro](screenshots/registarar.png)
+![Tela de registro](screenshots/registrar.png)
 ![Lista de Tarefas](screenshots/listas.png)
 ![Lista de itens](screenshots/itens.png)
 
