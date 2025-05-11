@@ -65,6 +65,7 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('TodoList.count', -1) do
       delete todo_list_path(todo_list)
     end
+    assert_redirected_to todo_lists_path
   end
 
 end

@@ -52,11 +52,11 @@ class TodoListsController < ApplicationController
   end
       
 
-    def destroy
-        @todo_list = TodoList.find(params[:id])
-        @todo_list.destroy
-        redirect_to root_path, notice: 'Todo list was successfully destroyed.'
-    end
+  def destroy
+    @todo_list = TodoList.find(params[:id])
+    @todo_list.destroy
+    redirect_to todo_lists_path, notice: "Lista excluída com sucesso."
+  end
       
 
     private
