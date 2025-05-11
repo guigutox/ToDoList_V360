@@ -11,16 +11,17 @@ class TodoItemTest < ActiveSupport::TestCase
     assert @todo_item.valid?
   end
 
-  test "deve ser inválido sem conteúdo" do
-    @todo_item.content = nil
-    assert_not @todo_item.valid?
-    assert_includes @todo_item.errors[:content], "can't be blank"
-  end
-
   test "deve ser inválido sem lista associada" do
-    @todo_item.todo_list = nil
-    assert_not @todo_item.valid?
-    assert_includes @todo_item.errors[:todo_list], "must exist"
+    todo_item = TodoItem.new(content: "Teste")
+    assert_not todo_item.valid?
+    assert_includes todo_item.errors[:todo_list], "é obrigatório(a)"
+  end
+  
+  test "deve ser inválido sem conteúdo" do
+    todo_item = TodoItem.new(todo_list: todo_lists(:lista1))
+    assert_not todo_item.valid?
+    assert_includes todo_item.errors[:content], "não pode ficar em branco" 
+    assert_includes todo_item.errors[:content], "é muito curto (mínimo: 3 caracteres)"
   end
 
   test "valor padrão de done deve ser false" do
