@@ -20,4 +20,19 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
   end
+
+  test "não deve realizar login com credenciais inválidas" do
+    post login_path, params: { username: "usuario_invalido", password: "senha_invalida" }
+    assert_response :unprocessable_entity
+  end
+
+  test "não deve realizar login com senha vazia" do
+    post login_path, params: { username: "usuario_invalido", password: "" }
+    assert_response :unprocessable_entity
+  end
+  
+  test "não deve realizar login com username vazio" do
+    post login_path, params: { username: "", password: "senha_invalida" }
+    assert_response :unprocessable_entity
+  end
 end
