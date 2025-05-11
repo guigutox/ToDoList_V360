@@ -5,7 +5,6 @@
 <%= form_with model: @todo_list, local: true do |form| %>
   <% if @todo_list.errors.any? %>
     <div>
-      <h2><%= pluralize(@todo_list.errors.count, "erro") %> ao salvar:</h2>
       <ul>
         <% @todo_list.errors.full_messages.each do |message| %>
           <li class="liError"><%= message %></li>
