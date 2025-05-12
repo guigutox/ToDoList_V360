@@ -5,7 +5,7 @@
 <div class="dropdown">
   <button class="dropbtn">☰ <%= current_user.username %></button>
   <div class="dropdown-content">
-    <%= link_to "Logout", logout_path, data: { turbo_method: :delete, turbo_confirm: "Deseja realmente sair?" }%>
+    <%= link_to "Sair", logout_path, data: { turbo_method: :delete, turbo_confirm: "Deseja realmente sair?" }%>
   </div>
 </div>
 
