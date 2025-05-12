@@ -338,7 +338,6 @@ a.btn-criar:active {
     flex-direction: column;
 }
 
-/* Estilo para a página inicial */
 .home-page {
     text-align: center;
     margin-top: 50px;
@@ -354,14 +353,14 @@ a.btn-criar:active {
 }
 
 .containerInfo {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .containerInfo h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .containerInfo p {
@@ -375,7 +374,7 @@ a.btn-criar:active {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .action-buttons .btn {
