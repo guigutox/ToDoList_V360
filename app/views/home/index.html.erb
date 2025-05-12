@@ -1,0 +1,16 @@
+<!-- filepath: /home/guilherme/ToDoList/app/views/home/index.html.erb -->
+<div class="container home-page">
+  <div class="logo">
+  <img src="<%= asset_path('to-do-list.png') %>" alt="Logo do CheckMate" class="logo-img">
+  </div>
+
+  <div class="containerInfo">
+    <h1>Bem-vindo ao CheckMate!</h1>
+    <p>Organize suas tarefas de forma simples e eficiente. Crie listas, acompanhe o progresso e defina prioridades para manter tudo sob controle.</p>
+  </div>
+
+  <div class="action-buttons">
+    <%= link_to 'Login', login_path, class: 'btn btn-login' %>
+    <%= link_to 'Registrar', signup_path, class: 'btn btn-register' %>
+  </div>
+</div>

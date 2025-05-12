@@ -322,3 +322,76 @@ a.btn-criar:active {
 .dropdown:hover .dropbtn {
     background-color: #6d6dfa;
 }
+
+.containerInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para a página inicial */
+.home-page {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.logo-img {
+    max-width: 150px;
+    height: auto;
+}
+
+.containerInfo {
+    margin-top: 50px;
+}
+
+.containerInfo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.containerInfo p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-buttons .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+}
+
+a.btn-login {
+    background-color: #6ab1bb;
+    color: white;
+}
+
+a.btn-login:hover {
+    background-color: #538991;
+}
+
+a.btn-register {
+    background-color: #ed8679;
+    color: white;
+}
+
+a.btn-register:hover {
+    background-color: #c47065;
+}
