@@ -11,20 +11,8 @@
                       toggle_done_todo_list_todo_item_path(@todo_list, item),
                       data: { turbo_method: :patch }, class: 'leftli checks' %> 
           <%= item.content %> 
-        <!-- <% if item.done %>
-          <strong>(✔️)</strong>
-        <% else %>
-          <strong>(❌)</strong>
-        <% end %>-->
-
-        <!--
-          <div class="checkbox">
-          <%= check_box_tag "item[#{item.id}]", item.done, item.done, 
-            data: { turbo_method: :patch, url: toggle_done_todo_list_todo_item_path(@todo_list, item) } %>
-          <%= item.content %>         
-        -->
           <%= link_to '🗑️', todo_list_todo_item_path(@todo_list, item), class: 'rightli delete',
-            data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' } %>
+            data: { turbo_method: :delete, turbo_confirm: 'Tem certeza que deseja excluir?' } %>
           <%= link_to '✏️', edit_todo_list_todo_item_path(@todo_list, item), class: 'rightli edit' %> 
         </li>
       <% end %>

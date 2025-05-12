@@ -23,7 +23,7 @@
       <span class="todo-actions">
         <%= link_to '🗑️', todo_list, class: 'rightli delete', data: { 
           turbo_method: :delete, 
-          turbo_confirm: 'Tem certeza?' 
+          turbo_confirm: 'Tem certeza que deseja excluir?' 
         } %>
         <%= link_to '✏️', edit_todo_list_path(todo_list), class: 'rightli edit' %> 
       </span>
