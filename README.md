@@ -13,6 +13,7 @@
 - [Stacks Utilizadas](#stacks-utilizadas)
 - [Pré-requisitos](#pré-requisitos)
 - [Como Rodar Localmente](#como-rodar-localmente)
+- [Como rodar utilizando docker](#como-rodar-utilizando-docker)
 - [Executar os Testes](#executar-os-testes)
 - [Demonstração](#demonstração)
 
@@ -156,6 +157,24 @@ bin/rails db:setup
 ```
 bin/rails server
 ```
+
+## Como rodar utilizando docker
+
+1- É necessário ter o docker instalado na maquina
+
+2- Entre no diretório do projeto
+
+3- Construa a imagem Docker a partir do `Dockerfile`:
+```
+docker run -p 3000:3000 --name app-container app-ruby
+```
+
+3- Rode o container com a imagem criada:
+```
+ docker run -e SECRET_KEY_BASE=dummy_key -e RAILS_ENV=development -p 3000:3000 --name minha-app-container app-ruby
+```
+
+5- Acesse a partir da url: http://localhost:3000
 
 ## Executar os testes
 1- Abra o terminal
