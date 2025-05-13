@@ -176,6 +176,48 @@ docker run -p 3000:3000 --name app-container app-ruby
 
 5- Acesse a partir da url: http://localhost:3000
 
+## Como rodar utilizando postgres ao inves de sqlite
+
+1- Entre no projeto
+
+2- Mude de branch para a branch postgress, utilizando:
+``` 
+git checkout postgress
+```
+
+3- Estando na branch utilize o comando no terminal:
+
+No Windows:
+```copy .env.example .env```
+
+No linux e macOs:
+```cp .env.example .env```
+
+4- Entre no arquivo .env e mude as variáveis
+
+5- Agora é necessario instalar a gem do postgress, no terminal use:
+
+```
+bundle install
+```
+
+6- Agora vamos buildar o container docker, no terminal use:
+```
+docker compose build
+```
+
+7- Suba o container utilizando o comando no terminal:
+```
+docker compose up -d
+```
+
+8- Agora, basta utilizar o comando abaixo para subir a aplicação e agora estará funcionando com postgres:
+
+```
+bin/rails server
+```
+
+
 ## Executar os testes
 1- Abra o terminal
 
