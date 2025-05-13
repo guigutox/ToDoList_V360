@@ -6,25 +6,26 @@
 ![Docker](https://img.shields.io/badge/docker-257bd6?style=for-the-badge&logo=docker&logoColor=white)
 
 ## Sumário
-- 🌍 [Visão Geral](#🌍-visão-geral)
-- ✨ [Principais Funcionalidades](#✨-principais-funcionalidades)
-- 🏗️ [Arquitetura](#🏗️-arquitetura)
-- 🛤️ [Rotas](#🛤️-rotas)
-- 📝 [Padrão de Commit](#📝-padrão-de-commit)
-- 🛠️ [Stacks Utilizadas](#🛠️-stacks-utilizadas)
-- 📋 [Pré-requisitos](#📋-pré-requisitos)
-- 💻 [Como Rodar Localmente](#💻-como-rodar-localmente)
-- 🐳 [Como rodar utilizando docker](#🐳-como-rodar-utilizando-docker)
-- 🐘 [Como rodar utilizando postgres ao inves de sqlite](#🐘-como-rodar-utilizando-postgres-ao-inves-de-sqlite)
-- ✅ [Executar os Testes](#✅-executar-os-testes)
-- 🎥 [Demonstração](#🎥-demonstração)
+- 🌍 [Visão Geral](#visão-geral)
+- ✨ [Principais Funcionalidades](#principais-funcionalidades)
+- 🏗️ [Arquitetura](#arquitetura)
+- 🛤️ [Rotas](#rotas)
+- 📝 [Padrão de Commit](#padrão-de-commit)
+- 🛠️ [Stacks Utilizadas](#stacks-utilizadas)
+- 📋 [Pré-requisitos](#pré-requisitos)
+- 💻 [Como Rodar Localmente](#como-rodar-localmente)
+- 🐳 [Como rodar utilizando docker](#como-rodar-utilizando-docker)
+- 🐘 [Como rodar utilizando postgres ao inves de sqlite](#como-rodar-utilizando-postgres-ao-inves-de-sqlite)
+- ✅ [Executar os Testes](#executar-os-testes)
+- 🎥 [Demonstração](#demonstração)
 
-# 🌍-Visão geral
+
+# Visão geral
 A aplicação ToDoList foi criada sendo a solução do case técnico da vaga de estágio da V360, permite ao usuário criar, visualizar e gerenciar suas tarefas organizadas em listas de tarefas. Cada tarefa pode ser classificada por prioridade, e as listas podem ser visualizadas de maneira organizada, proporcionando uma interface simples e intuitiva para controle de tarefas diárias.
 
 
 
-# ✨-Principais funcionalidades
+# Principais funcionalidades
 - Realizar de registro, login e logout de usuários;
 - Usuários podem criar, atualizar e apagar listas;
 - Usuários podem criar, atualizar e apagar itens dentro das listas;
@@ -32,7 +33,7 @@ A aplicação ToDoList foi criada sendo a solução do case técnico da vaga de 
 - As listas de itens são ordenadas levando em conta as prioridade definidas na criação do item;
 - Cada item receberá a cor da sua prioridade;
 
-# 🏗️ Arquitetura
+# Arquitetura
 O projeto segue o padrão MVC (Model-View-Controller), que organiza o código em três camadas principais:
 
 - Model: Gerencia a lógica de negócios e a interação com o banco de dados. Exemplos:
@@ -51,7 +52,7 @@ O projeto segue o padrão MVC (Model-View-Controller), que organiza o código em
     - ```TodoListsController```: Gerencia as ações relacionadas às listas de tarefas.
     - ```SessionsController```: Gerencia login e logout.
 
-# 🛤️ Rotas
+# Rotas
 | Caminho                                                | Verbo HTTP | Controller#Action       | Descrição                |
 | ------------------------------------------------------ | ---------- | ----------------------- | ------------------------ |
 | `/signup`                                              | GET        | `Users#new`             | Formulário de cadastro   |
@@ -63,7 +64,7 @@ O projeto segue o padrão MVC (Model-View-Controller), que organiza o código em
 | `/todo_lists/:id`                                      | GET        | `TodoLists#show`        | Detalhes da lista        |
 | `/todo_lists/:todo_list_id/todo_items/:id/toggle_done` | PATCH      | `TodoItems#toggle_done` | Alterna status da tarefa |
 
-# 📝 Padrão de Commit
+# Padrão de Commit
 - O projeto segue um padrão para as mensagens de commit, com o objetivo de manter o histórico do repositório organizado e fácil de entender. Utilize o seguinte formato:
 
 - Estrutura da mensagem:
@@ -78,20 +79,20 @@ Exemplos:
 - Remove código obsoleto do controlador de sessões.
 
 
-# 🛠️ Stacks utilizadas
+# Stacks utilizadas
 - Ruby on rails
 - SQLite
 - Minitest
 - HTML
 - CSS
 
-# 📋 Pré-requisitos
+# Pré-requisitos
 - Ruby 3.2.0 ou superior
 - Rails 7.1.0 ou superior
 - SQLite3
 - Git
 
-# 💻 Como rodar localmente:
+# Como rodar localmente:
 
 1. Clone o repositório:  
     ```
@@ -118,7 +119,7 @@ Exemplos:
     bin/rails server
     ```
 
-# 🐳 Como rodar utilizando docker
+# Como rodar utilizando docker
 
 1. É necessário ter o docker instalado na maquina
 
@@ -136,7 +137,7 @@ Exemplos:
 
 5. Acesse a partir da url: http://localhost:3000
 
-# 🐘 Como rodar utilizando postgres ao inves de sqlite
+# Como rodar utilizando postgres ao inves de sqlite
 
 1. Entre no projeto
 
@@ -183,7 +184,7 @@ Exemplos:
     ```
 
 
-# ✅ Executar os testes
+# Executar os testes
 1. Abra o terminal
 
 2. Entre no diretório do projeto
@@ -193,7 +194,7 @@ Exemplos:
     bin/rails test
     ```
 
-# 🎥 Demonstração
+# Demonstração
 ![Tela de Inicio](screenshots/inicio.png)
 ![Tela de Login](screenshots/login.png)
 ![Tela de registro](screenshots/registrar.png)
