@@ -14,6 +14,7 @@ pt-BR:
       user:
         username: Nome de usuário
         password: Senha
+        password confirmation: Confirmação de senha
       todo_list:
         title: Título
         description: Descrição
