@@ -12,5 +12,21 @@ module ApplicationHelper
       tasks_done = tasks - tasks_undone
       tasks_done == 0 ? 'complete' : 'incomplete'
     end
+
+    def calculate_progress(tasks_undone, tasks)
+      return 0 if tasks == 0
+      (tasks_undone.to_f / tasks * 100).round(1)
+    end
+
+    def define_progress_color(tasks_undone, tasks)
+      progress = calculate_progress(tasks_undone, tasks)
+      if progress == 100
+        '#abeb94'
+      elsif progress >= 50
+        '#fce399'
+      else
+        '#ed8679'
+      end
+    end
   end
   

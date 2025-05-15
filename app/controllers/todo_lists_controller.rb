@@ -24,6 +24,9 @@ class TodoListsController < ApplicationController
           else 3
           end
         end
+
+        @total_tasks = @todo_list.todo_items.count
+        @completed_tasks = @todo_list.todo_items.where(done: true).count
     end
 
 

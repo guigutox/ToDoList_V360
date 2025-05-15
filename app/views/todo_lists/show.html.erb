@@ -1,6 +1,13 @@
 <div class="container">
   <h1><%= @todo_list.title %></h1>
  <p class="description"><strong>Descrição:</strong> <%= @todo_list.description %></p>
+
+ <div class="progress-bar">
+ <div class="progress-fill >" style="width:<%= calculate_progress(@completed_tasks, @total_tasks) %>%; background-color: <%= define_progress_color(@completed_tasks, @total_tasks) %>;">
+      <span style="margin-left: 0px;"><%= calculate_progress(@completed_tasks, @total_tasks) %>%</span>
+    </div>
+  </div>
+
   <div class="containerShow">
     <ul style="margin-top: 5px;">
       <% @todo_items.each do |item| %>
