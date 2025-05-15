@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   end
 
 
+  resources :users, only: [:show, :destroy]
+
   get  "/signup", to: "users#new",    as: "signup"
   post "/signup", to: "users#create"
+  patch "/users/update_password", to: "users#update_password", as: "update_password"
+
 
 
   get "login", to: "sessions#new", as: "login"
