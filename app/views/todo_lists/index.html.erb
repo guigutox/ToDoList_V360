@@ -18,8 +18,9 @@
 
 <ul>
   <% @todo_lists.each do |todo_list| %>
-    <li>
-      <span class="todo-title"><%= link_to todo_list.title, todo_list %></span>
+    <li class="<%= is_complete(todo_list.todo_items.where(done:true).count, todo_list.todo_items.count ) %>">
+      <span class="todo-title"><%= link_to todo_list.title, todo_list %> </span>
+      <span class="">(<%= todo_list.todo_items.where(done:true).count %> / <%=todo_list.todo_items.count %>)</span>
       <span class="todo-actions">
         <%= link_to '🗑️', todo_list, class: 'rightli delete', data: { 
           turbo_method: :delete, 

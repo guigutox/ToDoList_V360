@@ -404,3 +404,11 @@ a.btn-register {
 a.btn-register:hover {
     background-color: #c47065;
 }
+
+.complete {
+    background-color: #d2ecc8;
+}
+
+.incomplete {
+    background-color: #f8d7da;
+}

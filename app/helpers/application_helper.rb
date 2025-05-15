@@ -7,5 +7,10 @@ module ApplicationHelper
       else 'prioridade-indefinida'
       end
     end
+
+    def is_complete(tasks_undone, tasks)
+      tasks_done = tasks - tasks_undone
+      tasks_done == 0 ? 'complete' : 'incomplete'
+    end
   end
   
